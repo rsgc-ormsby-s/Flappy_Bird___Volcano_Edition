@@ -45,5 +45,19 @@ void draw() {
   image(Stalagmite, 700, 480, 200, 300);
   //Draw the Fourth Image of Stalagmite
   image(Stalagmite, 950, 480, 200, 300);
+  //Make the Bird Fly (Flap)
+BirdY = BirdY - BirdSpeed;
+}
+
+void keyPressed(){
+//Makes the Bird travel upward and to the side slightly when 'W' is Pressed
+ if (key == 'w'){
+  BirdSpeed = 3;
+  BirdX = BirdX +10;
+   }
+   //Makes the Bird travel downward and to the side slightly when 'S' is pressed
+if (key == 's'){
+  BirdSpeed = -3;
+  BirdX = BirdX+10;
 }
  
