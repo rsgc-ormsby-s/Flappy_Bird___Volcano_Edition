@@ -24,3 +24,26 @@ void setup() {
   Volcano = loadImage("Volcano.jpg"); //Loading the Flappy Bird Background
   Stalactite = loadImage("stalacite.png"); //Loading the Stalacite Image
   Stalagmite = loadImage("Stalagmite.png"); // Loading the Stalagmite Image
+}
+
+void draw() {
+  //Draw the Image of the Volcano Background
+  image(Volcano, 1, 1, 1500, 800);
+  //Draw the Image of the Flappy Bird
+  image(Bird, BirdX, BirdY, 100, 100);
+  //Draw the Image of Stalactite
+  image(Stalactite, 500, 1, 200, 400);
+  //Draw the Second Image of Stalacite
+  image(Stalactite, 200, 1, 200, 400);
+  //Draw the Third Image of Stalacite
+  image(Stalactite, 900, 1, 200, 400);
+  //Draw the Image of Stalagmite
+  image(Stalagmite, 200, 510, 200, 300);
+  //Draw the Second Image of Stalagmite
+  image(Stalagmite, 500, 480, 200, 320);
+  //Draw the Third Image of Stalagmite
+  image(Stalagmite, 700, 480, 200, 300);
+  //Draw the Fourth Image of Stalagmite
+  image(Stalagmite, 950, 480, 200, 300);
+}
+ 
