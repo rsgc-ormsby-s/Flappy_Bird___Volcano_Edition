@@ -28,7 +28,7 @@ void setup() {
 
 void draw() {
   //Draw the Image of the Volcano Background
-  image(Volcano, 1, 1, 1500, 800);
+  //image(Volcano, 1, 1, 1500, 800);
   //Draw the Image of the Flappy Bird
   image(Bird, BirdX, BirdY, 100, 100);
   //Draw the Image of Stalactite
@@ -46,18 +46,37 @@ void draw() {
   //Draw the Fourth Image of Stalagmite
   image(Stalagmite, 950, 480, 200, 300);
   //Make the Bird Fly (Flap)
-BirdY = BirdY - BirdSpeed;
+  BirdY = BirdY - BirdSpeed;
+  
+  //Hit Detection Objects (Because Stalagmites and Stalactites are Evil)
+  
+  //Draw the First Ellipse for Hit Detection (Stalactite)
+  ellipse(600, 1, 200, 820);
+  //Draw the Second Ellipse for Hit Detection (Stalactite)
+  ellipse(300, 1, 200, 820);
+  //Draw the Third Ellipse for Hit Detection (Stalactite)
+  ellipse(1000, 1, 200, 820);
+  //Draw the First Ellipse for Hit Detection (Stalagmite)
+  ellipse(300, 610, 200, 240);
+  //Draw the Second Ellipse for Hit Detection (Stalagmite)
+  ellipse(600, 610, 200, 255);
+  //Draw the Third Ellipse for Hit Detection (Stalagmite)
+  ellipse(800, 610, 190, 255);
+  //Draw the Fourth Ellipse for Hit Detection (Stalagmite)
+  ellipse(1050, 610, 190, 255);
+  //Statements to Make IsTouching work on rocks
+
 }
 
-void keyPressed(){
-//Makes the Bird travel upward and to the side slightly when 'W' is Pressed
- if (key == 'w'){
-  BirdSpeed = 3;
-  BirdX = BirdX +10;
-   }
-   //Makes the Bird travel downward and to the side slightly when 'S' is pressed
-if (key == 's'){
-  BirdSpeed = -3;
-  BirdX = BirdX+10;
+void keyPressed() {
+  //Makes the Bird travel upward and to the side slightly when 'W' is Pressed
+  if (key == 'w') {
+    BirdSpeed = 3;
+    BirdX = BirdX +10;
+  }
+  //Makes the Bird travel downward and to the side slightly when 'S' is pressed
+  if (key == 's') {
+    BirdSpeed = -3;
+    BirdX = BirdX+10;
+  }
 }
- 
