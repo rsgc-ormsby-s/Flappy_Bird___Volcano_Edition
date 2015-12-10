@@ -8,11 +8,11 @@ PImage Bird;
 PImage Volcano;
 PImage Stalactite;
 PImage Stalagmite;
-float BirdY = 500;
-float BirdSpeed = 0;
-float BirdX = 100;
+int BirdY = 500;
+int BirdSpeed = 0;
+int BirdX = 100;
 float gravity = 0.0005; 
-float BirdA = 1;
+int BirdA = 1;
 
 
 //Setup for Program
@@ -47,25 +47,6 @@ void draw() {
   image(Stalagmite, 950, 480, 200, 300);
   //Make the Bird Fly (Flap)
   BirdY = BirdY - BirdSpeed;
-fill(200, 200, 0);
-  //Hit Detection Objects for Reference (using the rectangle function)
-  ////Draw the First Ellipse for Hit Detection (Stalactite)
-  //rect(510, 1, 180, 400); 
-  ////Draw the Second Ellipse for Hit Detection (Stalactite)
-  //rect(210, 1, 200, 400);
-  ////Draw the Third Ellipse for Hit Detection (Stalactite)
-  //rect(910, 1, 200, 400);
-  ////Draw the First Ellipse for Hit Detection (Stalagmite)
-  //rect(200, 510, 200, 300);
-  ////Draw the Second Ellipse for Hit Detection (Stalagmite)
-  //rect(500, 480, 200, 300);
-  ////Draw the Third Ellipse for Hit Detection (Stalagmite)
-  //rect(710, 480, 190, 300);
-  ////Draw the Fourth Ellipse for Hit Detection (Stalagmite)
-  //rect(950, 480, 200, 300);
-  
-  fill(0, 0, 200);
-  rect(1150, 480, 10, 10);
   
   //Statements for Hit Detection
   
@@ -104,7 +85,14 @@ fill(200, 200, 0);
       BirdX = 100;
       BirdY = 500;
     }
-   
+    //Hit Detection: Win Condition
+    if(BirdX > 1000){
+    textSize(70);
+    text("Congratulations, You Won!", 100, 600);
+    fill(0, 200, 200);
+    BirdX = 100;
+    BirdY = 500;
+    }
 }
 //Make the Commands that Trigger movement when 'insert letter' key is pressed
 void keyPressed() {
