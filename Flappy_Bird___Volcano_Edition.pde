@@ -1,4 +1,4 @@
-//Purpose: To create flappy bird
+//Purpose: To create flappy bird with a volcano theme
 
 //Name: Simon Ormsby
 
@@ -15,10 +15,10 @@ float gravity = 0.0005;
 float BirdA = 1;
 
 
-//Setup
+//Setup for Program
 void setup() {
   //Creates the Canvas
-  size(1500, 1500);
+  size(1500, 800);
   //Load the Images
   Bird = loadImage("FlappyBird.png"); //Loading the Flappy Bird Image
   Volcano = loadImage("Volcano.jpg"); //Loading the Flappy Bird Background
@@ -28,7 +28,7 @@ void setup() {
 
 void draw() {
   //Draw the Image of the Volcano Background
-  //image(Volcano, 1, 1, 1500, 800);
+  image(Volcano, 1, 1, 1500, 800);
   //Draw the Image of the Flappy Bird
   image(Bird, BirdX, BirdY, 100, 100);
   //Draw the Image of Stalactite
@@ -47,27 +47,66 @@ void draw() {
   image(Stalagmite, 950, 480, 200, 300);
   //Make the Bird Fly (Flap)
   BirdY = BirdY - BirdSpeed;
+fill(200, 200, 0);
+  //Hit Detection Objects for Reference (using the rectangle function)
+  ////Draw the First Ellipse for Hit Detection (Stalactite)
+  //rect(510, 1, 180, 400); 
+  ////Draw the Second Ellipse for Hit Detection (Stalactite)
+  //rect(210, 1, 200, 400);
+  ////Draw the Third Ellipse for Hit Detection (Stalactite)
+  //rect(910, 1, 200, 400);
+  ////Draw the First Ellipse for Hit Detection (Stalagmite)
+  //rect(200, 510, 200, 300);
+  ////Draw the Second Ellipse for Hit Detection (Stalagmite)
+  //rect(500, 480, 200, 300);
+  ////Draw the Third Ellipse for Hit Detection (Stalagmite)
+  //rect(710, 480, 190, 300);
+  ////Draw the Fourth Ellipse for Hit Detection (Stalagmite)
+  //rect(950, 480, 200, 300);
   
-  //Hit Detection Objects (Because Stalagmites and Stalactites are Evil)
+  fill(0, 0, 200);
+  rect(1150, 480, 10, 10);
   
-  //Draw the First Ellipse for Hit Detection (Stalactite)
-  ellipse(600, 1, 200, 820);
-  //Draw the Second Ellipse for Hit Detection (Stalactite)
-  ellipse(300, 1, 200, 820);
-  //Draw the Third Ellipse for Hit Detection (Stalactite)
-  ellipse(1000, 1, 200, 820);
-  //Draw the First Ellipse for Hit Detection (Stalagmite)
-  ellipse(300, 610, 200, 240);
-  //Draw the Second Ellipse for Hit Detection (Stalagmite)
-  ellipse(600, 610, 200, 255);
-  //Draw the Third Ellipse for Hit Detection (Stalagmite)
-  ellipse(800, 610, 190, 255);
-  //Draw the Fourth Ellipse for Hit Detection (Stalagmite)
-  ellipse(1050, 610, 190, 255);
-  //Statements to Make IsTouching work on rocks
-
+  //Statements for Hit Detection
+  
+  //Hit Detection Stalactite #1
+  if(BirdX > 150 && BirdY < 370 && BirdX < 400){
+  BirdX = 100;
+  BirdY = 500;
+  }
+  //Hit Detection Stalactite #2
+  if(BirdX > 460 && BirdY < 370 && BirdX < 660){
+    BirdX = 100;
+    BirdY = 500;
+  }
+    //Hit Detection Stalactite #3
+    if(BirdX > 840 && BirdY < 370 && BirdX < 1100){
+      BirdX = 100;
+      BirdY = 500;
+    }
+    //Hit Detection Stalagmite #1
+    if(BirdX > 150 && BirdY > 450 && BirdX < 400){
+      BirdX = 100;
+      BirdY = 500;
+    }
+    //Hit Detection Stalagmite #2
+    if(BirdX > 440 && BirdY > 430 && BirdX < 700){
+      BirdX = 100;
+      BirdY = 500;
+    }
+    //Hit Detection Stalagmite #3
+    if(BirdX > 700 && BirdY > 430 && BirdX < 900){
+    BirdX = 100;
+    BirdY = 500;
+    }
+    //Hit Detection Stalagmite #4
+    if(BirdX > 800 && BirdY > 430 && BirdX < 1150){
+      BirdX = 100;
+      BirdY = 500;
+    }
+   
 }
-
+//Make the Commands that Trigger movement when 'insert letter' key is pressed
 void keyPressed() {
   //Makes the Bird travel upward and to the side slightly when 'W' is Pressed
   if (key == 'w') {
@@ -79,4 +118,6 @@ void keyPressed() {
     BirdSpeed = -3;
     BirdX = BirdX+10;
   }
+  
+  
 }
