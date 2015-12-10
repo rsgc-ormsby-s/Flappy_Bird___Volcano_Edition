@@ -88,8 +88,8 @@ void draw() {
     //Hit Detection: Win Condition
     if(BirdX > 1000){
     textSize(70);
-    text("Congratulations, You Won!", 100, 600);
-    fill(0, 200, 200);
+    text("Congratulations, You Won!", 100, 400);
+    fill(0, 200, 0);
     BirdX = 100;
     BirdY = 500;
     }
