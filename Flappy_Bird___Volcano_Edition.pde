@@ -11,8 +11,7 @@ PImage Stalagmite;
 int BirdY = 500;
 int BirdSpeed = 0;
 int BirdX = 100;
-float gravity = 0.0005; 
-int BirdA = 1;
+
 
 
 //Setup for Program
